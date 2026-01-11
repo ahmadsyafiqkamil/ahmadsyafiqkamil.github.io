@@ -1,5 +1,6 @@
 'use client'
 
+import * as React from "react"
 import { motion } from 'motion/react'
 import { Card } from './ui/card'
 import { Button } from './ui/button'

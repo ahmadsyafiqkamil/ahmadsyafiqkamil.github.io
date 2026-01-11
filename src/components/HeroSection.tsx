@@ -1,5 +1,6 @@
 'use client'
 
+import * as React from "react"
 import { motion } from 'motion/react'
 import { Button } from './ui/button'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'

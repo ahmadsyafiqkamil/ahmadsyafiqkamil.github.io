@@ -1,5 +1,6 @@
 'use client'
 
+import * as React from "react"
 import { motion, AnimatePresence } from 'motion/react'
 import { X, Github, ExternalLink, Calendar, Code, Image as ImageIcon } from 'lucide-react'
 import { ImageWithFallback } from './figma/ImageWithFallback'
