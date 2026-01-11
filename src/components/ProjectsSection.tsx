@@ -143,10 +143,10 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">Katalog Proyek</h2>
+          <h2 className="text-4xl md:text-5xl text-white mb-6">Featured Projects</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 mx-auto"></div>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-            Jelajahi koleksi proyek yang telah saya kerjakan. Klik pada proyek untuk melihat detail lengkap
+            Explore my collection of projects. Click on a project to see the full details
           </p>
         </motion.div>
 

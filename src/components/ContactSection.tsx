@@ -50,19 +50,19 @@ export function ContactSection() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex.johnson@email.com',
-      href: 'mailto:alex.johnson@email.com'
+      value: 'ahmadsyafiqkamil@gmail.com',
+      href: 'mailto:ahmadsyafiqkamil@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+62 81330145416',
+      href: 'tel:+628133014541'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Jakarta, Indonesia',
       href: '#'
     }
   ]
@@ -224,7 +224,7 @@ export function ContactSection() {
           className="border-t border-white/10 mt-16 pt-8 text-center"
         >
           <p className="text-gray-400">
-            © 2025 Alex Johnson. Designed &amp; Built with ❤️ using React and Tailwind CSS.
+            © 2025 Ahmad Syafiq Kamil. Designed &amp; Built with ❤️ using React and Tailwind CSS.
           </p>
         </motion.div>
       </div>
