@@ -3,35 +3,8 @@
 import { motion } from 'motion/react'
 import { ArrowLeft, Calendar, Clock, Tag, Share2, Github, Twitter, Linkedin } from 'lucide-react'
 import { ImageWithFallback } from './figma/ImageWithFallback'
-
-interface BlogPost {
-  title: string
-  excerpt: string
-  image: string
-  category: string
-  date: string
-  readTime: string
-  slug: string
-  author?: {
-    name: string
-    avatar: string
-    role: string
-  }
-  content?: {
-    introduction: string
-    sections: {
-      heading: string
-      content: string
-      codeExample?: {
-        language: string
-        code: string
-      }
-      image?: string
-    }[]
-    conclusion: string
-  }
-  tags?: string[]
-}
+import { BlogPost } from '../types/contentful'
+import { RichTextRenderer } from './RichTextRenderer'
 
 interface BlogPostPageProps {
   post: BlogPost
@@ -39,39 +12,12 @@ interface BlogPostPageProps {
 }
 
 export function BlogPostPage({ post, onBack }: BlogPostPageProps) {
-  // Default content structure if not provided
-  const defaultContent = {
-    introduction: post.excerpt,
-    sections: [
-      {
-        heading: 'Overview',
-        content: 'This article explores key concepts and best practices in modern web development. We\'ll dive deep into practical examples and real-world scenarios.'
-      },
-      {
-        heading: 'Key Concepts',
-        content: 'Understanding the fundamentals is crucial for building robust applications. Let\'s explore the core principles that make this technology powerful.',
-        codeExample: {
-          language: 'typescript',
-          code: `// Example implementation
-const example = () => {
-  return "Hello World";
-}`
-        }
-      },
-      {
-        heading: 'Best Practices',
-        content: 'Following industry standards and best practices ensures your code is maintainable, scalable, and performant. Here are some key recommendations to keep in mind.'
-      }
-    ],
-    conclusion: 'By implementing these patterns and practices, you\'ll be well-equipped to build modern, efficient web applications. Keep learning and experimenting!'
-  }
-
-  const content = post.content || defaultContent
+  const content = post.content
 
   const author = post.author || {
-    name: 'John Developer',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop',
-    role: 'Full Stack Developer'
+    name: 'Ahmad Syafiq Kamil',
+    avatar: 'https://github.com/ahmadsyafiqkamil.png',
+    role: 'Senior Full Stack Engineer & AI Systems Builder'
   }
 
   return (
@@ -159,103 +105,73 @@ const example = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              onClick={() => navigator.share?.({ title: post.title, url: window.location.href })}
               className="w-10 h-10 bg-gray-900 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-emerald-500/50 transition-all"
+              title="Share"
             >
               <Share2 className="w-4 h-4" />
             </motion.button>
-            <motion.button
+            <motion.a
+              href={`https://x.com/__syafiq`}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="w-10 h-10 bg-gray-900 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-emerald-500/50 transition-all"
+              title="Share on Twitter"
             >
               <Twitter className="w-4 h-4" />
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="https://linkedin.com/in/ahmadsyafiqkamil"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="w-10 h-10 bg-gray-900 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-emerald-500/50 transition-all"
+              title="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 
         {/* Introduction */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mb-12"
-        >
-          <p className="text-gray-300 text-lg leading-relaxed">
-            {content.introduction}
-          </p>
-        </motion.div>
-
-        {/* Content Sections */}
-        {content.sections.map((section, index) => (
+        {content?.introduction && (
           <motion.div
-            key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 + index * 0.1 }}
+            transition={{ delay: 0.5 }}
             className="mb-12"
           >
-            <h2 className="text-2xl md:text-3xl text-white mb-6 border-l-4 border-emerald-500 pl-4">
-              {section.heading}
-            </h2>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              {section.content}
-            </p>
-
-            {/* Code Example */}
-            {section.codeExample && (
-              <div className="my-8 rounded-lg overflow-hidden border border-white/10">
-                <div className="bg-gray-900 px-4 py-2 flex items-center justify-between border-b border-white/10">
-                  <span className="text-emerald-400 text-sm font-mono">
-                    {section.codeExample.language}
-                  </span>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-gray-400 hover:text-white text-xs transition-colors"
-                  >
-                    Copy
-                  </motion.button>
-                </div>
-                <pre className="bg-gray-950 p-6 overflow-x-auto">
-                  <code className="text-gray-300 text-sm font-mono">
-                    {section.codeExample.code}
-                  </code>
-                </pre>
-              </div>
-            )}
-
-            {/* Section Image */}
-            {section.image && (
-              <div className="my-8 rounded-lg overflow-hidden border border-white/10">
-                <ImageWithFallback
-                  src={section.image}
-                  alt={section.heading}
-                  className="w-full h-auto"
-                />
-              </div>
-            )}
+            <RichTextRenderer document={content.introduction} className="text-lg" />
           </motion.div>
-        ))}
+        )}
+
+        {/* Main Content Body */}
+        {content?.body && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="mb-12"
+          >
+            <RichTextRenderer document={content.body} />
+          </motion.div>
+        )}
 
         {/* Conclusion */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="mb-12 p-6 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 rounded-lg"
-        >
-          <h2 className="text-2xl text-white mb-4">Kesimpulan</h2>
-          <p className="text-gray-300 leading-relaxed">
-            {content.conclusion}
-          </p>
-        </motion.div>
+        {content?.conclusion && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="mb-12 p-6 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 rounded-lg"
+          >
+            <h2 className="text-2xl text-white mb-4">Kesimpulan</h2>
+            <RichTextRenderer document={content.conclusion} />
+          </motion.div>
+        )}
 
         {/* Tags */}
         {post.tags && post.tags.length > 0 && (

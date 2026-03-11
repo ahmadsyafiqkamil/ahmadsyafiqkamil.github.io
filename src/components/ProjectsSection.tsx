@@ -13,100 +13,100 @@ export function ProjectsSection() {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with Next.js, TypeScript, and Stripe integration.',
-      fullDescription: 'A comprehensive e-commerce platform featuring user authentication, product management, shopping cart functionality, secure payment processing with Stripe, real-time inventory tracking, order management, and an admin dashboard. The application is built with modern web technologies ensuring fast performance and excellent user experience.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
+      title: 'AI-Powered Consular Chatbot — KJRI Dubai',
+      description: 'Production-ready LLM agent for consular services — one of the first AI-powered citizen services in Indonesian diplomatic infrastructure.',
+      fullDescription: 'Building a production-ready AI agent for consular services at KJRI Dubai using Google Agent Development Kit (ADK), Python, FastAPI, and PostgreSQL. One of the first LLM-agent deployments in Indonesian government diplomatic infrastructure, enabling 24/7 automated citizen services for WNI in UAE. The system handles common consular queries, document guidance, and service routing with context-aware responses.',
+      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop',
       screenshots: [
-        'https://images.unsplash.com/photo-1687524690542-2659f268cde8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc2ODAxNDgwNnww&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop'
+        'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop'
       ],
-      technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Tailwind CSS', 'Prisma'],
+      technologies: ['Google ADK', 'Python', 'FastAPI', 'PostgreSQL', 'Docker'],
+      github: '#',
+      live: '#',
+      category: 'AI / Backend',
+      date: 'In Development, 2025–2026'
+    },
+    {
+      title: 'Protkons — National Consular Protection Platform',
+      description: 'Multi-mission consular protection system serving 1M+ registered WNI across 6 Indonesian missions in Malaysia.',
+      fullDescription: 'Multi-mission consular protection system deployed across 6 Indonesian missions in Malaysia, serving over one million registered WNI. Handles citizen registration, legal protection, welfare tracking, and case escalation. Built with PHP, CodeIgniter, and MySQL, containerized with Docker across dedicated on-premise servers maintaining 99.9% uptime.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+      screenshots: [
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=600&fit=crop'
+      ],
+      technologies: ['PHP', 'CodeIgniter', 'MySQL', 'Docker'],
       github: '#',
       live: '#',
       category: 'Full-Stack',
-      date: 'January 2024'
+      date: '2022–Present'
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative project management tool with real-time updates and drag-and-drop functionality.',
-      fullDescription: 'A powerful task management application designed for teams to collaborate effectively. Features include real-time synchronization using WebSocket, intuitive drag-and-drop interface for task organization, team member assignments, progress tracking, notifications, file attachments, and detailed analytics dashboards.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
+      title: 'MLOps Infrastructure for National Research',
+      description: 'Shared machine learning infrastructure using Kubernetes and Kubeflow, adopted by multiple BPPT research centers for deploying computer vision models at scale.',
+      fullDescription: 'Architected end-to-end MLOps infrastructure from server setup to CI/CD pipelines using Kubernetes and Kubeflow at Badan Pengkajian dan Penerapan Teknologi (BPPT). Enabled automated model training, versioning, and deployment. The face recognition system built on this infrastructure achieved 92% accuracy and is currently in active use by a government ministry for attendance management. Conducted hands-on training for 20+ research engineers.',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
       screenshots: [
-        'https://images.unsplash.com/photo-1758521961744-939de61d5cb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXNrJTIwbWFuYWdlbWVudCUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NjgxMDI1Njl8MA&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop'
+        'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop'
       ],
-      technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express', 'Redux'],
+      technologies: ['Kubernetes', 'Docker', 'Python', 'TensorFlow', 'MLflow'],
       github: '#',
       live: '#',
-      category: 'Full-Stack',
-      date: 'December 2023'
+      category: 'MLOps / AI',
+      date: '2022'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application with location-based forecasts and interactive maps.',
-      fullDescription: 'An intuitive weather dashboard that provides accurate weather forecasts based on user location or search. Features include 7-day forecasts, hourly predictions, interactive weather maps, air quality index, UV index, sunrise/sunset times, and beautiful data visualizations using Chart.js.',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
-      screenshots: [
-        'https://images.unsplash.com/photo-1759488820765-5cf0755965ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWF0aGVyJTIwYXBwJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc2ODAxMjA0MHww&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop'
-      ],
-      technologies: ['Vue.js', 'Chart.js', 'OpenWeather API', 'Tailwind CSS', 'Vuex'],
-      github: '#',
-      live: '#',
-      category: 'Frontend',
-      date: 'November 2023'
-    },
-    {
-      title: 'Social Media Analytics',
-      description: 'A dashboard for social media analytics with real-time data processing and visualizations.',
-      fullDescription: 'A comprehensive analytics platform for social media managers to track performance across multiple platforms. Features include real-time data processing, custom visualizations with D3.js, automated reporting, sentiment analysis, engagement metrics, follower growth tracking, and exportable reports.',
+      title: 'AI-Powered Data Pipeline Automation',
+      description: 'Intelligent data processing workflows using Claude AI API and n8n — exploring AI-driven validation and automated reporting for research datasets.',
+      fullDescription: 'Built a working prototype of intelligent data processing workflows using the Claude AI API and n8n automation platform. The system explores AI-driven data validation, automated reporting, and research dataset enrichment. Demonstrates integration patterns for embedding LLMs into existing data pipelines using Python, Docker, and PostgreSQL.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
       screenshots: [
-        'https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmFseXRpY3MlMjBkYXNoYm9hcmQlMjBzY3JlZW58ZW58MXx8fHwxNzY4MDE5ODA2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
         'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
         'https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=600&fit=crop'
       ],
-      technologies: ['Python', 'Django', 'React', 'D3.js', 'PostgreSQL', 'Celery'],
+      technologies: ['Python', 'Claude AI', 'n8n', 'Docker', 'PostgreSQL'],
       github: '#',
       live: '#',
-      category: 'Full-Stack',
-      date: 'October 2023'
+      category: 'AI / Automation',
+      date: '2025'
     },
     {
-      title: 'AI Chat Interface',
-      description: 'An intelligent chat interface with natural language processing and multi-language support.',
-      fullDescription: 'A sophisticated AI-powered chat application utilizing OpenAI\'s API for natural conversations. Features include context-aware responses, conversation history, multi-language support, code syntax highlighting, markdown rendering, voice input capability, and customizable AI personalities.',
-      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop',
+      title: 'BetterFuture & E-Voting DApps',
+      description: 'Decentralized applications using Solidity smart contracts with secure on-chain voting mechanisms and tokenized incentive systems.',
+      fullDescription: 'Developed two decentralized applications on Ethereum using Solidity smart contracts and Vite.js frontends. BetterFuture features tokenized incentive systems for positive social impact. The E-Voting DApp implements secure on-chain voting mechanisms with cryptographic verification, tamper-proof ballot recording, and transparent result tallying via Hardhat and Web3.js integration.',
+      image: 'https://images.unsplash.com/photo-1639762681057-408e52192e55?w=600&h=400&fit=crop',
       screenshots: [
-        'https://images.unsplash.com/photo-1762340277380-04c2c30d0ef8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGF0JTIwYXBwbGljYXRpb24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzY4MTAyNTcxfDA&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop'
+        'https://images.unsplash.com/photo-1639762681057-408e52192e55?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=600&fit=crop'
       ],
-      technologies: ['React', 'OpenAI API', 'Node.js', 'WebSocket', 'TypeScript', 'Redis'],
+      technologies: ['Solidity', 'Ethereum', 'Vite.js', 'Web3.js', 'Hardhat'],
       github: '#',
       live: '#',
-      category: 'Full-Stack',
-      date: 'September 2023'
+      category: 'Web3 / Blockchain',
+      date: '2025'
     },
     {
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website with smooth animations and dark theme.',
-      fullDescription: 'A modern, fully responsive portfolio website showcasing projects and skills. Built with performance in mind, featuring smooth scroll animations, dark theme with accent colors, optimized images, SEO best practices, contact form integration, and a blog section for sharing knowledge.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
+      title: 'Parvata & FOCO iOS Apps',
+      description: 'Native iOS productivity and focus management tools with CoreData, background notifications, and Apple HIG-compliant interfaces.',
+      fullDescription: 'Two native iOS applications built with Swift and SwiftUI during the Apple Academy Developer program. Parvata is a productivity tool featuring CoreData integration for offline-first data persistence and CloudKit sync. FOCO is a focus management app with Pomodoro-style sessions, background notifications, and progress analytics. Both apps follow Apple Human Interface Guidelines for a polished, native feel.',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop',
       screenshots: [
-        'https://images.unsplash.com/photo-1649000808933-1f4aac7cad9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3J0Zm9saW8lMjB3ZWJzaXRlJTIwZGVzaWdufGVufDF8fHx8MTc2ODA1Mjk2Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-        'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+        'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
         'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop'
       ],
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript', 'MDX'],
+      technologies: ['Swift', 'SwiftUI', 'CoreData', 'CloudKit'],
       github: '#',
       live: '#',
-      category: 'Frontend',
-      date: 'August 2023'
+      category: 'iOS / Mobile',
+      date: '2024'
     }
   ]
 

@@ -60,35 +60,36 @@ export function HeroSection() {
             transition={{ delay: 0.4 }}
             className="text-5xl md:text-7xl text-white mb-6"
           >
-            Alex Johnson
+            Ahmad Syafiq Kamil
           </motion.h1>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
             className="text-2xl md:text-4xl text-gray-300 mb-8"
           >
-            I'm a{' '}
+            Senior{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
-              Full-Stack Developer
+              Full Stack Engineer
             </span>
-            {' '}specializing in{' '}
+            {' '}& builder of{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              Modern Web Applications
+              AI-Powered Systems
             </span>
           </motion.div>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
             className="text-gray-400 text-lg max-w-2xl mx-auto mb-8"
           >
-            I craft exceptional digital experiences using cutting-edge technologies like React, Node.js, and TypeScript. 
-            Passionate about clean code, user experience, and bringing ideas to life.
+            7+ years building mission-critical applications for diplomatic missions, national research institutions,
+            and government agencies. Proficient in cloud-native deployment with AWS, Kubernetes, and Python.
+            ISO 27001 certified.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -101,12 +102,12 @@ export function HeroSection() {
             >
               View My Work
             </Button>
-            
+
             <div className="flex items-center space-x-4">
               {[
-                { icon: Github, href: '#' },
-                { icon: Linkedin, href: '#' },
-                { icon: Mail, href: '#' }
+                { icon: Github, href: 'https://github.com/ahmadsyafiqkamil' },
+                { icon: Linkedin, href: 'https://linkedin.com/in/ahmadsyafiqkamil' },
+                { icon: Mail, href: 'mailto:ahmadsyafiqkamil@gmail.com' }
               ].map(({ icon: Icon, href }, index) => (
                 <motion.a
                   key={index}

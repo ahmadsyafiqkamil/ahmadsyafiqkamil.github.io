@@ -8,23 +8,23 @@ export function AboutSection() {
   const features = [
     {
       icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable, and efficient code that stands the test of time.'
+      title: 'AI-Powered Systems',
+      description: 'Building production-ready LLM agents and AI pipelines using Google ADK, LangChain, and Claude AI for real-world government and enterprise deployments.'
     },
     {
       icon: Lightbulb,
-      title: 'Innovation',
-      description: 'Always exploring new technologies and creative solutions to complex problems.'
+      title: 'Cloud & DevOps',
+      description: 'Containerizing and deploying mission-critical applications with Docker and Kubernetes, achieving 99.9% uptime across 7 diplomatic missions.'
     },
     {
       icon: Users,
-      title: 'Collaboration',
-      description: 'Working effectively with teams to deliver exceptional user experiences.'
+      title: 'Cross-Institutional',
+      description: 'Collaborating with government ministries, diplomatic missions, and international clients across Indonesia, Malaysia, UAE, and Germany.'
     },
     {
       icon: Coffee,
-      title: 'Dedication',
-      description: 'Committed to continuous learning and staying current with industry trends.'
+      title: 'Security & Compliance',
+      description: 'ISO 27001 Lead Auditor certified with hands-on experience implementing RBAC, AES-256 encryption, and HIPAA-aligned data handling.'
     }
   ]
 
@@ -51,21 +51,21 @@ export function AboutSection() {
             className="space-y-6"
           >
             <h3 className="text-2xl text-white mb-4">
-              Passionate about creating digital experiences that matter
+              Software engineer solving high-stakes problems at national scale
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              With over 5 years of experience in web development, I've had the privilege of working with 
-              startups and established companies to bring their digital visions to life. My journey began 
-              with a curiosity about how websites work, and it has evolved into a passion for creating 
-              seamless, performant applications.
+              With 7+ years of experience, I've built and deployed AI-powered systems and scalable data infrastructure
+              for Indonesian diplomatic missions, national research institutions (BRIN, BPPT), and government agencies.
+              From serving 1M+ registered citizens through the Protkons consular platform to pioneering the first
+              LLM-agent chatbot in Indonesian diplomatic infrastructure.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              I specialize in React, Node.js, and modern JavaScript frameworks, but I'm always eager to 
-              learn new technologies that can help me build better solutions. When I'm not coding, you'll 
-              find me contributing to open-source projects, writing technical articles, or exploring the 
-              latest in web technologies.
+              I'm a generalist who moves fluidly across the stack — Python backends, Next.js frontends, Kubernetes
+              clusters, MLOps pipelines, iOS apps, and Solidity smart contracts. Currently focused on integrating
+              AI-assisted development workflows and building intelligent automation for impactful real-world problems,
+              with a growing interest in healthcare technology.
             </p>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="flex flex-wrap gap-3 mt-6"
             >
-              {['Problem Solver', 'Team Player', 'Quick Learner', 'Detail Oriented'].map((trait, index) => (
+              {['ISO 27001 Certified', 'AI Systems Builder', 'Cloud Native', 'Open to Remote'].map((trait, index) => (
                 <span
                   key={trait}
                   className="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm border border-emerald-500/30"

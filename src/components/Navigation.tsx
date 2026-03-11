@@ -37,7 +37,7 @@ export function Navigation() {
             transition={{ delay: 0.2 }}
             className="text-white text-xl font-medium"
           >
-            &lt;DevPortfolio /&gt;
+            &lt;ASyafiq /&gt;
           </motion.div>
           
           <div className="hidden md:flex items-center space-x-8">

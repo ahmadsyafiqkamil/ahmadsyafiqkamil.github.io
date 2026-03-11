@@ -6,30 +6,30 @@ import { Card } from './ui/card'
 export function SkillsSection() {
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: 'Backend & AI',
       skills: [
-        { name: 'React/Next.js', level: 95, color: 'from-blue-400 to-blue-600' },
-        { name: 'TypeScript', level: 90, color: 'from-blue-500 to-blue-700' },
-        { name: 'Tailwind CSS', level: 88, color: 'from-cyan-400 to-cyan-600' },
-        { name: 'Vue.js', level: 75, color: 'from-green-400 to-green-600' }
+        { name: 'Python (Advanced)', level: 95, color: 'from-yellow-400 to-yellow-600' },
+        { name: 'Django REST / FastAPI', level: 92, color: 'from-green-400 to-green-600' },
+        { name: 'Next.js / React', level: 88, color: 'from-blue-400 to-blue-600' },
+        { name: 'Google ADK / LangChain', level: 80, color: 'from-purple-400 to-purple-600' }
       ]
     },
     {
-      title: 'Backend',
+      title: 'Cloud & Infrastructure',
       skills: [
-        { name: 'Node.js', level: 90, color: 'from-green-500 to-green-700' },
-        { name: 'Python', level: 85, color: 'from-yellow-400 to-yellow-600' },
-        { name: 'PostgreSQL', level: 80, color: 'from-indigo-400 to-indigo-600' },
-        { name: 'MongoDB', level: 78, color: 'from-green-600 to-green-800' }
+        { name: 'Docker', level: 93, color: 'from-blue-500 to-blue-700' },
+        { name: 'Kubernetes (K8s)', level: 82, color: 'from-indigo-400 to-indigo-600' },
+        { name: 'AWS / DigitalOcean', level: 80, color: 'from-orange-400 to-orange-600' },
+        { name: 'CI/CD Pipelines', level: 85, color: 'from-emerald-400 to-emerald-600' }
       ]
     },
     {
-      title: 'Tools & Others',
+      title: 'Data & Security',
       skills: [
-        { name: 'Git/GitHub', level: 92, color: 'from-gray-400 to-gray-600' },
-        { name: 'Docker', level: 82, color: 'from-blue-600 to-blue-800' },
-        { name: 'AWS', level: 75, color: 'from-orange-400 to-orange-600' },
-        { name: 'GraphQL', level: 70, color: 'from-pink-400 to-pink-600' }
+        { name: 'PostgreSQL / MySQL', level: 90, color: 'from-cyan-400 to-cyan-600' },
+        { name: 'Pandas / NumPy / dbt', level: 85, color: 'from-pink-400 to-pink-600' },
+        { name: 'MLOps / TensorFlow', level: 78, color: 'from-red-400 to-red-600' },
+        { name: 'ISO 27001 / AES-256', level: 88, color: 'from-gray-400 to-gray-600' }
       ]
     }
   ]
@@ -113,8 +113,9 @@ export function SkillsSection() {
           <h3 className="text-2xl text-white mb-8">Technologies I Work With</h3>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             {[
-              'React', 'TypeScript', 'Node.js', 'Next.js', 'Python', 'PostgreSQL', 
-              'MongoDB', 'Docker', 'AWS', 'Git', 'Tailwind', 'GraphQL'
+              'Python', 'TypeScript', 'Next.js', 'Django', 'FastAPI', 'PostgreSQL',
+              'Docker', 'Kubernetes', 'AWS', 'Claude AI', 'Google ADK', 'Solidity',
+              'Swift', 'Go', 'PHP', 'n8n'
             ].map((tech, index) => (
               <motion.span
                 key={tech}

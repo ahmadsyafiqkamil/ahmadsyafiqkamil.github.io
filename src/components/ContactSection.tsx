@@ -12,28 +12,28 @@ export function ContactSection() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex.johnson@email.com',
-      href: 'mailto:alex.johnson@email.com'
+      value: 'ahmadsyafiqkamil@gmail.com',
+      href: 'mailto:ahmadsyafiqkamil@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+62 813-3014-5415',
+      href: 'tel:+6281330145415'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Jakarta, Indonesia (UTC+7)',
       href: '#'
     }
   ]
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/ahmadsyafiqkamil', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/ahmadsyafiqkamil', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: '#', label: 'Email' }
+    { icon: Mail, href: 'mailto:ahmadsyafiqkamil@gmail.com', label: 'Email' }
   ]
 
   return (
@@ -126,9 +126,10 @@ export function ContactSection() {
             <div>
               <h3 className="text-2xl text-white mb-6">Let's connect</h3>
               <p className="text-gray-400 leading-relaxed mb-8">
-                I'm currently available for freelance work and full-time opportunities. 
-                Whether you have a project in mind or just want to chat about technology, 
-                I'd love to hear from you.
+                I'm open to remote full-time roles, consulting engagements, and interesting freelance projects —
+                particularly in AI systems, cloud infrastructure, and healthcare technology.
+                Indonesian citizen, eligible to work remotely for international companies without visa sponsorship.
+                Comfortable with US East Coast timezone overlap.
               </p>
             </div>
 
@@ -186,7 +187,7 @@ export function ContactSection() {
           className="border-t border-white/10 mt-16 pt-8 text-center"
         >
           <p className="text-gray-400">
-            © 2025 Alex Johnson. Designed &amp; Built with ❤️ using React and Tailwind CSS.
+            © 2025 Ahmad Syafiq Kamil. Designed &amp; Built with ❤️ using React and Tailwind CSS.
           </p>
         </motion.div>
       </div>

@@ -5,35 +5,13 @@ import { SkillsSection } from './components/SkillsSection'
 import { ProjectsSection } from './components/ProjectsSection'
 import { BlogSection } from './components/BlogSection'
 import { BlogPostPage } from './components/BlogPostPage'
+import { AllBlogsPage } from './components/AllBlogsPage'
 import { ContactSection } from './components/ContactSection'
 import { useState } from 'react'
-
-interface BlogPost {
-  title: string
-  excerpt: string
-  image: string
-  category: string
-  date: string
-  readTime: string
-  slug: string
-  content?: {
-    introduction: string
-    sections: {
-      heading: string
-      content: string
-      codeExample?: {
-        language: string
-        code: string
-      }
-      image?: string
-    }[]
-    conclusion: string
-  }
-  tags?: string[]
-}
+import { BlogPost } from './types/contentful'
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'blog-post'>('home')
+  const [currentView, setCurrentView] = useState<'home' | 'blog-post' | 'all-blogs'>('home')
   const [selectedBlogPost, setSelectedBlogPost] = useState<BlogPost | null>(null)
 
   const handleReadArticle = (post: BlogPost) => {
@@ -54,8 +32,22 @@ export default function App() {
     }, 100)
   }
 
+  const handleViewAllBlogs = () => {
+    setCurrentView('all-blogs')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleBackToHome = () => {
+    setCurrentView('home')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   if (currentView === 'blog-post' && selectedBlogPost) {
     return <BlogPostPage post={selectedBlogPost} onBack={handleBackToBlog} />
+  }
+
+  if (currentView === 'all-blogs') {
+    return <AllBlogsPage onReadArticle={handleReadArticle} onBack={handleBackToHome} />
   }
 
   return (
@@ -66,7 +58,7 @@ export default function App() {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
-        <BlogSection onReadArticle={handleReadArticle} />
+        <BlogSection onReadArticle={handleReadArticle} onViewAll={handleViewAllBlogs} limit={6} />
         <ContactSection />
       </main>
     </div>
