@@ -37,3 +37,33 @@ export interface ContentfulBlogPostFields {
 }
 
 export type ContentfulBlogPostEntry = Entry<ContentfulBlogPostFields>
+
+export interface Project {
+  title: string
+  description: string
+  fullDescription: string
+  image: string
+  screenshots: string[]
+  technologies: string[]
+  github: string
+  live: string
+  category: string
+  date: string
+  order: number
+}
+
+export interface ContentfulProjectFields {
+  title: string
+  description: string
+  fullDescription: string
+  image: Asset
+  screenshots?: Asset[]
+  technologies: string[]
+  github?: string
+  live?: string
+  category: string
+  date: string
+  order?: number
+}
+
+export type ContentfulProjectEntry = Entry<ContentfulProjectFields>

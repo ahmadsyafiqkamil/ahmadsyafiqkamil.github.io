@@ -5,13 +5,11 @@ import { Card } from './ui/card'
 import { ExternalLink, Github } from 'lucide-react'
 import { ImageWithFallback } from './figma/ImageWithFallback'
 import { ProjectModal } from './ProjectModal'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { fetchProjects } from '../lib/contentful'
+import { Project } from '../types/contentful'
 
-export function ProjectsSection() {
-  const [selectedProject, setSelectedProject] = useState<any>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const projects = [
+const hardcodedProjects: Project[] = [
     {
       title: 'AI-Powered Consular Chatbot — KJRI Dubai',
       description: 'Production-ready LLM agent for consular services — one of the first AI-powered citizen services in Indonesian diplomatic infrastructure.',
@@ -26,7 +24,8 @@ export function ProjectsSection() {
       github: '#',
       live: '#',
       category: 'AI / Backend',
-      date: 'In Development, 2025–2026'
+      date: 'In Development, 2025–2026',
+      order: 1,
     },
     {
       title: 'Protkons — National Consular Protection Platform',
@@ -42,7 +41,8 @@ export function ProjectsSection() {
       github: '#',
       live: '#',
       category: 'Full-Stack',
-      date: '2022–Present'
+      date: '2022–Present',
+      order: 2,
     },
     {
       title: 'MLOps Infrastructure for National Research',
@@ -58,7 +58,8 @@ export function ProjectsSection() {
       github: '#',
       live: '#',
       category: 'MLOps / AI',
-      date: '2022'
+      date: '2022',
+      order: 3,
     },
     {
       title: 'AI-Powered Data Pipeline Automation',
@@ -74,7 +75,8 @@ export function ProjectsSection() {
       github: '#',
       live: '#',
       category: 'AI / Automation',
-      date: '2025'
+      date: '2025',
+      order: 4,
     },
     {
       title: 'BetterFuture & E-Voting DApps',
@@ -90,7 +92,8 @@ export function ProjectsSection() {
       github: '#',
       live: '#',
       category: 'Web3 / Blockchain',
-      date: '2025'
+      date: '2025',
+      order: 5,
     },
     {
       title: 'Parvata & FOCO iOS Apps',
@@ -106,11 +109,29 @@ export function ProjectsSection() {
       github: '#',
       live: '#',
       category: 'iOS / Mobile',
-      date: '2024'
+      date: '2024',
+      order: 6,
     }
   ]
 
-  const handleProjectClick = (project: any) => {
+export function ProjectsSection() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [projects, setProjects] = useState<Project[]>(hardcodedProjects)
+
+  useEffect(() => {
+    fetchProjects()
+      .then((data) => {
+        if (data.length > 0) {
+          setProjects(data)
+        }
+      })
+      .catch(() => {
+        // Keep hardcoded fallback on error
+      })
+  }, [])
+
+  const handleProjectClick = (project: Project) => {
     setSelectedProject(project)
     setIsModalOpen(true)
   }

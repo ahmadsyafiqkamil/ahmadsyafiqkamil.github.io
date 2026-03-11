@@ -1,5 +1,5 @@
 import { createClient, Entry, EntryCollection } from 'contentful'
-import { BlogPost, ContentfulBlogPostEntry } from '../types/contentful'
+import { BlogPost, ContentfulBlogPostEntry, Project, ContentfulProjectEntry } from '../types/contentful'
 
 const spaceId = import.meta.env.VITE_CONTENTFUL_SPACE_ID
 const accessToken = import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN
@@ -75,6 +75,62 @@ export async function fetchBlogPosts(): Promise<BlogPost[]> {
     )
   } catch (error) {
     console.error('Error fetching blog posts from Contentful:', error)
+    throw error
+  }
+}
+
+/**
+ * Transform Contentful project entry to Project format
+ */
+function transformContentfulProjectEntry(entry: ContentfulProjectEntry): Project {
+  const fields = entry.fields
+
+  const imageUrl = fields.image?.fields?.file?.url
+    ? `https:${fields.image.fields.file.url}`
+    : 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop'
+
+  const screenshots = fields.screenshots
+    ? fields.screenshots
+        .filter((s) => s?.fields?.file?.url)
+        .map((s) => `https:${s.fields.file.url}`)
+    : []
+
+  return {
+    title: fields.title,
+    description: fields.description,
+    fullDescription: fields.fullDescription,
+    image: imageUrl,
+    screenshots,
+    technologies: fields.technologies || [],
+    github: fields.github || '#',
+    live: fields.live || '#',
+    category: fields.category,
+    date: fields.date,
+    order: fields.order ?? 99,
+  }
+}
+
+/**
+ * Fetch all projects from Contentful
+ */
+export async function fetchProjects(): Promise<Project[]> {
+  try {
+    if (!spaceId || !accessToken) {
+      console.warn('Contentful credentials missing, returning empty array')
+      return []
+    }
+
+    const response: EntryCollection<ContentfulProjectEntry['fields']> =
+      await client.getEntries({
+        content_type: 'project',
+        order: 'fields.order',
+      })
+
+    return response.items.map((item) =>
+      transformContentfulProjectEntry(item as ContentfulProjectEntry)
+    )
+  } catch (error) {
+    console.error('Error fetching projects from Contentful:', error)
     throw error
   }
 }
